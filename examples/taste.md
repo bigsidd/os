@@ -73,7 +73,3 @@ A good review: seven numbered problems, a legal check and a skeleton for the rew
 ## What the lens missed
 
 The review without the lens asked whether the partner contracts allow changing terms by email, with notice periods and amendment clauses. The lens review didn't. That's a real gap. It belongs in the commercial lens, not taste, which is why taste runs last and isn't the only check.
-
-<!-- STORY SLOT 1: a real (anonymized) time an artifact looked finished but broke its one-sentence job. Two lines: what it was, what its job actually was, what changed. -->
-
-<!-- STORY SLOT 2: a verdict you gave that only landed once the why was attached, or a repeated call you turned into a team rule. -->

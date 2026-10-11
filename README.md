@@ -53,7 +53,7 @@ Prompt systems rot quietly. Someone rewords a trigger, a real task stops reachin
 | Build a new UI component | design, workflow gates | |
 | Open the PR for a UI change | de-ai-ify | |
 
-<!-- RESULT LINE: paste the latest run here, e.g. "Last run 2026-10-xx: 9/9 pass." -->
+**Last run, 2026-10-11: 8 of 9 pass.** The miss: asked to open the PR for a UI change, the agent ran the code and safety checks but never reached for the AI-slop design check on its own. Written rules alone missed it. In my live setup, a ship gate blocks that push until the check has run, and that's why the gate exists.
 
 **Monthly audit.** 16 automated checks for broken cross-references, unregistered lens files, hooks pointing at missing scripts, the same principle restated in two places (which is how drift starts), and whether the workflow gates are actually followed.
 
