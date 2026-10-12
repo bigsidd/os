@@ -2,7 +2,7 @@
 
 **My product judgment, written so AI agents can run it, and tested monthly to prove they still do.**
 
-I lead product partnerships and solutions engineering in adtech, and I build most things through AI agents. Early on, the agents' failures were judgment failures: a polished partner email that asked for nothing, a feature green-lit because one loud partner wanted it.
+I run partner success in adtech, getting enterprise partners from "interested" to live, and I build most things through AI agents. Early on, the agents' failures were judgment failures: a polished partner email that asked for nothing, a feature green-lit because one loud partner wanted it.
 
 So I wrote my judgment down as **lenses**: short rule files an agent reads before it acts. This repo is the public part of that system.
 
