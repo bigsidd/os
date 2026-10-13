@@ -12,7 +12,7 @@ Every plan that needs someone else to act rests on a guess about that person. Th
 1. **Name one real person at one real moment.** "The publisher" can't be predicted. "The rev ops lead at a ticketing partner, reading this the week their quarter closes" can.
 2. **Find the goal behind the request.** A partner asking for a new placement usually wants a revenue line they can defend in their next budget meeting. Write to that meeting.
 3. **Guess how they feel, and label it a guess.** "Probably nervous about the payout date" stays a guess until you see it. Their mood comes from the last similar notice they got; if the last SDK upgrade broke their checkout, this one opens under suspicion.
-4. **Replace fuzzy words with a reason.** "Seamless" and "value-add" sound like answers and explain nothing. Keep pushing until you can point to the exact thing you built and why this person would care.
+4. **Replace fuzzy words with a reason.** "Seamless" and "best-in-class" sound like answers and explain nothing. Keep pushing until you can point to the exact thing you built and why this person would care.
 
 ## Writing a change notice
 
