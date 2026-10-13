@@ -1,15 +1,22 @@
 #!/usr/bin/env bash
-# Warn (never block) when a new root-level markdown file isn't on CLAUDE.md's
-# rule 3 allowlist. Non-blocking on purpose: the underlying problem (a stray
-# AI session-summary file) is trivially reversible, and a hard block risks
-# silently killing a legitimate root file (CHANGELOG.md, SECURITY.md, a new
-# durable doc type) at a bad moment. See main-branch-edit-warn.sh for the
-# same warn-not-block reasoning applied to an equally fuzzy judgment call.
+# Claude Code hook: warn (never block) when an agent creates a new root-level
+# markdown file that isn't on your allowlist. Catches the stray
+# "IMPLEMENTATION_SUMMARY.md" files agents like to leave behind.
 #
-# The allowlist is parsed live from CLAUDE.md's own rule 3 line, not
-# duplicated here — a second hardcoded copy is exactly how this rule and its
-# enforcement drifted apart before (this hook used to embed its own
-# whitelist directly in settings.json, out of sync with CLAUDE.md's prose).
+# Why warn instead of block: a stray file is trivially reversible, and a hard
+# block could stop a legitimate new doc (CHANGELOG.md, SECURITY.md) at a bad
+# moment.
+#
+# Why the allowlist lives in your rules file, not here: a second hardcoded
+# copy is how a rule and its enforcement drift apart. One source of truth.
+#
+# Setup:
+#   1. In your rules file (default ~/.claude/CLAUDE.md, or set RULES_FILE),
+#      add a line like:
+#        No AI artifact markdown files. Allowed: `README.md`, `CLAUDE.md`, `CHANGELOG.md`. Hook-flagged.
+#   2. Register this script as a PostToolUse hook on Write in Claude Code's
+#      settings.json.
+# If the line is missing or malformed, the hook stays silent (fails open).
 
 input=$(cat)
 file=$(echo "$input" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('tool_input',{}).get('file_path',''))" 2>/dev/null || echo '')
@@ -35,7 +42,7 @@ abs_dir=$(cd "$dir" 2>/dev/null && pwd -P || echo "$dir")
 
 filename=$(basename "$file")
 
-# Parse the allowlist out of CLAUDE.md's own rule 3 line — backtick-quoted
+# Parse the allowlist out of the rules file's "Allowed:" line: backtick-quoted
 # .md filenames after "Allowed:". Fails open (allows silently) if the line
 # is missing or its format ever changes, so a parsing bug never turns into
 # a flood of false warnings.
@@ -58,6 +65,6 @@ for allowed in $allowlist; do
     [ "$filename" = "$allowed" ] && exit 0
 done
 
-echo "[RULE 3] Root-level $filename isn't on CLAUDE.md's markdown allowlist ($allowlist). If this is a one-off session-summary artifact, delete it or fold its content into an allowed file. If it's a genuine new durable doc type, add it to CLAUDE.md rule 3."
+echo "[markdown allowlist] Root-level $filename isn't on the allowlist ($allowlist). If it's a one-off session summary, delete it or fold it into an allowed file. If it's a genuine new doc type, add it to the allowlist in your rules file."
 
 exit 0
