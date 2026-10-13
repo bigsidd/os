@@ -1,6 +1,6 @@
 ---
 name: anti-ai
-description: Run before shipping any AI-assisted code, deck, document or data analysis. Catches the signs that nobody with judgment looked at it, and fabricated citations.
+description: Run before shipping any AI-assisted code, deck, document or data analysis. Catches signs that nobody with judgment reviewed it, plus fabricated citations.
 ---
 
 # Anti-AI Tells
@@ -30,7 +30,7 @@ AI output fails in a predictable way: on every choice with many good answers, it
 
 ## Citations
 
-This is the one with real consequences. Fabricated cases have already led to court sanctions.
+This is the one with real consequences. Fabricated cases have already led to court sanctions (Mata v. Avianca, S.D.N.Y. 2023).
 
 1. **Check every citation, quote and statistic against its source before it ships.** Confirm the source exists and says what you say it says. No exceptions.
 2. **If you can't verify a number, cut it or label it as unverified.**

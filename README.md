@@ -39,7 +39,7 @@ flowchart LR
 
 Prompt systems rot quietly. Someone rewords a trigger, a real task stops reaching the lens it needs, and nothing errors.
 
-**Routing regression.** Nine real tasks run through fresh headless agent sessions. Each run checks which lenses the agent opened, and which it shouldn't have. Most lenses named below are in my private set; `taste` is published.
+**Routing regression.** Nine real tasks run through fresh headless agent sessions. Each run checks which lenses the agent opened, and which it shouldn't have. Most lenses named below are in my private set; `taste` and `anti-ai` are published.
 
 | Task | Must open | Must not open |
 |---|---|---|
@@ -48,10 +48,10 @@ Prompt systems rot quietly. Someone rewords a trigger, a real task stops reachin
 | Should we build a self-serve preview tool? | product | |
 | Positioning doc for a new partner segment | strategy, retail media | |
 | Coach a direct report on discovery-call notes | motivation, taste | |
-| Run the product-sense lens on an SDK placement question | ps-lens, taste | |
+| Run the product-sense lens on an SDK placement question | product-sense, taste | |
 | Update a README | | taste |
 | Build a new UI component | design, workflow gates | |
-| Open the PR for a UI change | de-ai-ify | |
+| Open the PR for a UI change | design de-slop check | |
 
 **Last run, 2026-10-11: 8 of 9 pass.** The miss: asked to open the PR for a UI change, the agent ran the code and safety checks but never reached for the AI-slop design check on its own. Written rules alone missed it. In my live setup, a ship gate blocks that push until the check has run, and that's why the gate exists.
 
