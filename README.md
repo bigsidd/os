@@ -1,6 +1,6 @@
 # os
 
-**My product judgment, written so AI agents can run it, and tested monthly to prove they still do.**
+**My product judgment, written so AI agents can run it, and checked monthly to see that they still fire.**
 
 I run partner success in adtech, getting enterprise partners from "interested" to live, and I build most things through AI agents. Early on, the agents' failures were judgment failures: a polished partner email that asked for nothing, a feature green-lit because one loud partner wanted it.
 

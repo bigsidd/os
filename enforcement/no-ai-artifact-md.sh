@@ -55,7 +55,7 @@ except Exception:
 m = re.search(r'No AI artifact markdown files.*?Allowed:(.*?)\.\s*Hook', text, re.DOTALL)
 if not m:
     raise SystemExit
-names = re.findall(r'\`([A-Za-z0-9_.-]+\.mdx?)\`', m.group(1))
+names = re.findall(r'\`([A-Za-z0-9_.-]+\.(?:mdx?|markdown))\`', m.group(1))
 print(' '.join(names))
 " 2>/dev/null)
 
