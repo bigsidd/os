@@ -10,14 +10,14 @@ Every plan that needs someone else to act rests on a guess about that person. Th
 ## Start with the person
 
 1. **Name one real person at one real moment.** "The publisher" can't be predicted. "The rev ops lead at a ticketing partner, reading this the week their quarter closes" can.
-2. **Find the goal behind the request.** A partner asking for a new placement usually wants a revenue line they can defend. There is often a quieter goal as well, like their standing with their own team. Write to that one too.
+2. **Find the goal behind the request.** A partner asking for a new placement usually wants a revenue line they can defend in their next budget meeting. Write to that meeting.
 3. **Guess how they feel, and label it a guess.** "Probably nervous about the payout date" stays a guess until you see it. Their mood comes from the last similar notice they got; if the last SDK upgrade broke their checkout, this one opens under suspicion.
 4. **Replace fuzzy words with a reason.** "Seamless" and "value-add" sound like answers and explain nothing. Keep pushing until you can point to the exact thing you built and why this person would care.
 
 ## Writing a change notice
 
 1. **Put the reason in the opening sentence.** A partner reading about a rev share change wants the why first, and reads everything after it through that.
-2. **Say what changes for them and when, once.** Each added argument gives them one more thing to dispute. On a fee increase, a list of features backfires: the publisher starts counting the ones they never turn on.
+2. **Say what changes for them and when, once.** Each added argument gives them one more thing to dispute. If you need three paragraphs to justify a change, the change is the problem.
 3. **Picture the readers you weren't aiming at.** An SDK upgrade notice sent to every partner also lands on quiet integrations that had no reason to change. Trace what it prompts them to do, then what follows from that. Some knock-on costs are acceptable; name them and accept them on purpose.
 
 ## Reading customer feedback

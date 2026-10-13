@@ -39,7 +39,7 @@ Before you fund it, write down what you'd try cheaply first, who will actually u
 - Protect the one detail the idea depends on. A plain stand-in for it is a different product, and "we'll polish later" rarely arrives.
 - In the first week, read what real users say and do. Dashboards earn trust once volume shows up.
 - If the model or vendor underneath keeps getting cheaper and better, design so those gains flow into your product on their own.
-- Before a big launch, imagine it's three months later and it flopped. Everyone writes reasons alone, then reads one each in turn so the senior voice doesn't frame the room. Ask for the risk people only mention in hallways, and name the one person who signs off.
+- Before a big launch, run a pre-mortem: assume it failed and list why, in writing, before anyone discusses it. Then name the one person who signs off.
 
 ## Did it work?
 
