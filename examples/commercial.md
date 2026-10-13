@@ -44,7 +44,6 @@ A sound review. It reads the pressure correctly and proposes a sensible package.
 
 - **The cost became numbers.** "A 40% cut" and "volume must grow 67% to break even" turn a feeling of a bad deal into a threshold someone can check.
 - **The guarantee got a break-even.** About $57K a month in gross is the line below which you pay out of pocket. The baseline said "size it well below $40k" without saying why.
-- **Every concession has a price.** The table pairs each give with an ask, so nothing is conceded for free.
 - **It names who decides.** Terms below the floor, exclusivity and guarantees go to a named approver instead of being settled on the call.
 
 ## What the lens missed

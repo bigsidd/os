@@ -1,69 +1,59 @@
 ---
 name: product
-description: Run before committing people or money to a new direction, before saying yes to a partner or customer ask that implies new build, and before making a prioritization call between options. Not for routine implementation, copy review, or pricing a deal that's already been scoped.
+description: Use when a partner ask would mean new build, when someone proposes putting people or money behind a new direction, or when two options compete for one slot. Not for routine implementation, copy review, or pricing a deal that's already scoped.
 ---
 
 # Product Judgment
 
-Most bad product calls come from starting with what we can build instead of who needs it. This lens moves the conversation back to the person and the outcome. It returns a decision with its reasoning attached.
+Start with the person who needs the thing, then decide what to build. Every situation below opens the same way: name the actual person (role, company, moment) and what they're trying to get done. If "easy to use" or "adds value" is the best description you have, rewrite it as something they'll do differently.
 
-## Before anything else
+## A big partner wants something built
 
-1. **Name the person and what they're trying to get done right now.** A real role at a real company, in a real moment. If you can't say it concretely, you aren't ready to judge the idea.
-2. **Treat the request as one possible answer to a goal nobody stated.** Ask what they're really trying to do. The goal tends to carry over to other customers. The specific request rarely does.
-3. **Translate vague value claims into behavior.** "Easy to use" or "adds value" can make anything sound good. Say what the person will do differently and why. If the claim doesn't survive that, drop it.
+Build for the pattern; one loud request is a single data point.
 
-## When a partner asks for something new
+- Ask what they're trying to accomplish. Their goal tends to show up at other partners; their exact spec rarely does.
+- Look through current settings before scoping code. A targeting rule or config flag often already does it, and then that's the answer.
+- Picture the next three partners. If none of them would want this same shape, this account's volume has to pay for it alone. And say the precedent out loud: once we say yes here, what do we owe the next partner who cites it?
+- Open the reply with what they can do today, then ask about the goal.
 
-1. **Ask whether it will recur.** The test is whether other partners will want the same shape of thing. One partner's urgency, however loud, isn't enough to justify building for everyone.
-2. **Check for an existing setting first.** A targeting rule or config option often covers the need with no new code. If it does, say so and push back on the ask as written.
-3. **Pick the response on purpose:** decline, narrow the scope, send them to someone who already solves it, or do it once as an exception. Then ask the tiebreaker out loud. Does this partner's volume justify custom work, and does yes here commit us to the next partner who asks?
-4. **Keep integrations consistent.** If one partner's request would break naming or behavior that every other integration relies on, the answer is no, even when it looks reasonable on its own.
-5. **Lead the reply with what they can do today,** then ask about the goal before offering a counter-proposal.
+## Someone wants to start something new
 
-## Before funding a new bet
+Before you fund it, write down what you'd try cheaply first, who will actually use it and for what reason, the result that would make you stop, and how much you'll spend before deciding.
 
-1. **Write four things down.** Who will act and why (the demand hypothesis). What changed that makes this possible now. The most you'll spend before you get a real read. The result that would kill it.
-2. **"The pieces exist" explains timing, nothing more.** It doesn't show anyone wants the thing.
-3. **Find the cheapest honest test.** An afternoon that removes real doubt beats a finished feature nobody asked to see. Start from the assumption it won't work and look for evidence against it.
-4. **Make people rank the problem.** Asked in isolation, everyone says their current problem matters. Ask where it sits against their other priorities.
-5. **When model output is the product, write the eval first.** A set of real cases with pass/fail criteria does the job a spec used to do.
-6. **Label pure capability experiments as such.** No demand hypothesis yet, sized only by what you can afford to lose, with a stated second job: a demo, a proof, or groundwork for something bigger.
+- "All the parts already exist" shows it's feasible. Whether anyone wants it is a separate question.
+- Spend an afternoon on a test that could prove you wrong before spending a quarter on a build.
+- Ask people where this problem sits in their list of priorities. Almost everyone says yes to "does this matter?"
+- If model output is what the user experiences, write graded example cases first. They become the spec.
 
-## Choosing between options
+## Two good options, one slot
 
-1. **Agree on the principles before debating the options.** List what this decision has to satisfy, rank them, then pick the option that serves the top ones. A better third option often shows up during the ranking.
-2. **Check the question for a bad assumption** before answering it as asked.
-3. **Keep generating and judging apart.** Feasibility objections during brainstorming kill ideas that were fine. Collect first, then cut.
-4. **Compare generated variants before writing a spec.** Where you can prototype output directly, put real versions side by side instead of describing an imagined one.
+- Write down what the winner has to get right, most important first, before anyone argues for a side. Then score both against that list.
+- Check the question itself. A bad premise produces a confident wrong answer.
+- If one option bends a convention every other integration relies on, that usually settles it, however sensible it looks for one account.
+- Hold feasibility objections until the list of ideas is done. Raised early, they kill ideas that would have worked.
+- Where you can generate real versions, put them side by side and compare those.
 
-## Shipping it
+## It's built: shipping and learning
 
-1. **Ship before polishing.** You don't know what to polish until people use it.
-2. **Keep the craft that makes the idea work.** If a detail is the whole point, the plain "for now" version is a different and worse product, and the follow-up polish rarely ships.
-3. **In the first days, read real reactions.** A few genuine user responses tell you more than a dashboard with no volume behind it.
-4. **Build so outside improvements compound.** If the models or tools underneath get better and cheaper on their own, design so you inherit that instead of freezing a spec around today's limits.
+- Ship rough. Usage tells you which rough edges matter.
+- Protect the one detail the idea depends on. A plain stand-in for it is a different product, and "we'll polish later" rarely arrives.
+- In the first week, read what real users say and do. Dashboards earn trust once volume shows up.
+- If the model or vendor underneath keeps getting cheaper and better, design so those gains flow into your product on their own.
+- Before a big launch, imagine it's three months later and it flopped. Everyone writes reasons alone, then reads one each in turn so the senior voice doesn't frame the room. Ask for the risk people only mention in hallways, and name the one person who signs off.
 
-## Before a big launch
+## Did it work?
 
-1. **Run a pre-mortem.** Assume it failed badly three months from now and ask why. Have people write reasons alone first, then share one at a time so the senior voice doesn't set the frame.
-2. **Ask for the risk everyone knows about and nobody says.** That's usually where the damage is.
-3. **Know who decides.** A high-stakes launch needs a named person who signs off at a set point. An assumed approval doesn't count.
+- Connect what you controlled, what you shipped, and the result you wanted. "It launched" is the middle step; say which number should move and by how much.
+- Keep usage and adoption apart. Heavy use by existing fans can hide that nobody new is trying the feature.
+- Judge a young bet by what it taught you. Revenue yardsticks come later.
 
-## Measuring it
+## Your own week
 
-1. **Trace inputs to outputs to outcomes.** "We shipped it" is an output. Say which outcome it was meant to move and by how much.
-2. **Keep usage and adoption separate.** Heavy use by existing users can hide that nobody new is picking the feature up. Those need different fixes.
-3. **Judge early bets on what they taught you.** Holding a new bet to the revenue standard of a mature product punishes exploring.
-
-## Your own time
-
-If you've done the same judgment call by hand three times, write the playbook instead of doing it a fourth. It needs an owner, a trigger, and the exceptions. A list of steps alone is just documentation.
+If you've made the same call by hand three times, write it up so someone else can make it. A usable playbook says who owns it, what kicks it off, and when to break the rule.
 
 ## Output
 
-- The person, and what they're trying to get done.
-- Recommendation: **build**, **configure what exists**, **test first**, or **decline**.
-- The reasoning, including the precedent it sets.
-- For a new bet: demand hypothesis, why now, loss cap, and kill test.
-- The outcome metric it should move.
+- Who it's for and what they're trying to get done.
+- Recommendation: **build**, **configure what exists**, **test first**, or **decline**, with the reasoning and the precedent it sets.
+- For something new: the cheap first try, who'll use it, the stop result, and the spend limit.
+- The number it should move.

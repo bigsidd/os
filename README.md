@@ -6,7 +6,7 @@ I run partner success in adtech, getting enterprise partners from "interested" t
 
 So I wrote my judgment down as **lenses**: short rule files an agent reads before it acts. This repo is the public part of that system.
 
-**See it work.** Each lens was tested the same way: two fresh agent sessions, same task, one with the lens and one without.
+**See it work.** Four of the five lenses were tested the same way: two fresh agent sessions, same task, one with the lens and one without.
 - [Taste](examples/taste.md): a partner change notice
 - [Commercial](examples/commercial.md): a renewal that asks for a worse split, a guarantee and exclusivity
 - [Product](examples/product.md): the biggest partner demands a custom feature in six weeks
@@ -55,7 +55,7 @@ Prompt systems rot quietly. Someone rewords a trigger, a real task stops reachin
 | Should we build a self-serve preview tool? | product | |
 | Positioning doc for a new partner segment | strategy, retail media | |
 | Coach a direct report on discovery-call notes | motivation, taste | |
-| Run the product-sense lens on an SDK placement question | product-sense, taste | |
+| Pressure-test an SDK placement idea | product, taste | |
 | Update a README | | taste |
 | Build a new UI component | design, workflow gates | |
 | Open the PR for a UI change | design de-slop check | |

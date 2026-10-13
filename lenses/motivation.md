@@ -9,41 +9,39 @@ Every plan that needs someone else to act rests on a guess about that person. Th
 
 ## Start with the person
 
-1. **Name one real person at one real moment.** "The user" can't be predicted. "The finance lead opening this the morning invoices are due" can.
-2. **Ask what they're trying to get done right now.** What they asked for is one route to it; find the goal behind the request. A second goal often rides along, like looking good to their team, and copy that speaks to it lands harder.
-3. **Guess what they're feeling, and write it as a guess.** "Likely anxious about the payout date" until you've seen it. People compare a new moment to one they remember, so the feeling usually arrives before your message does.
-4. **Swap vague words for a reason.** "Simple" and "adds value" point at an answer without giving one. Keep asking why until you can name the product choice and the human reason it matters.
+1. **Name one real person at one real moment.** "The publisher" can't be predicted. "The rev ops lead at a ticketing partner, reading this the week their quarter closes" can.
+2. **Find the goal behind the request.** A partner asking for a new placement usually wants a revenue line they can defend. There is often a quieter goal as well, like their standing with their own team. Write to that one too.
+3. **Guess how they feel, and label it a guess.** "Probably nervous about the payout date" stays a guess until you see it. Their mood comes from the last similar notice they got; if the last SDK upgrade broke their checkout, this one opens under suspicion.
+4. **Replace fuzzy words with a reason.** "Seamless" and "value-add" sound like answers and explain nothing. Keep pushing until you can point to the exact thing you built and why this person would care.
 
 ## Writing a change notice
 
-1. **An upset reader's first question is why. Answer it in the first line.**
-2. **Extra justification breeds resentment.** Each added reason reads as one more thing they're asked to accept. Say it once.
-3. **A price-increase email that lists features invites resentment.** The reader sees a bill for things they never use. Say what changes for them and when.
-4. **A message to everyone also reaches people who weren't going to act.** Think through what it does to them before it goes out.
-5. **Ask what happens after the intended effect.** Write the second-order effect down. Some look bad and are still worth it; decide that on purpose.
+1. **Put the reason in the opening sentence.** A partner reading about a rev share change wants the why first, and reads everything after it through that.
+2. **Say what changes for them and when, once.** Each added argument gives them one more thing to dispute. On a fee increase, a list of features backfires: the publisher starts counting the ones they never turn on.
+3. **Picture the readers you weren't aiming at.** An SDK upgrade notice sent to every partner also lands on quiet integrations that had no reason to change. Trace what it prompts them to do, then what follows from that. Some knock-on costs are acceptable; name them and accept them on purpose.
 
 ## Reading customer feedback
 
-1. **Read the verbatim feedback before any summary.** The summary drops the detail that would have changed your read.
-2. **Trust what people did over what they say they'll do.** People describe their past accurately and their future hopefully, and most want to be helpful.
-3. **Polish gets agreement, so test commitment.** A nice mockup earns nods. A signature or a payment tells you something.
-4. **Check who you talked to.** One friendly customer gives you the feeling of research without the information. Talk to people who left and to people who use it without having bought it.
-5. **An important problem still has to beat their other problems.** Until they've ranked it against what else is on their plate, a yes is a maybe. That's how a pilot slides to next quarter.
+1. **Read the raw notes first.** Call notes and support threads hold the specifics a summary flattens, and the specifics are usually what shifts the call.
+2. **Weight past behavior over future promises.** "We'd definitely run that unit" is a hope. Ask what they ran last quarter and why they stopped.
+3. **Ask for something that costs them.** A clean demo of a new offer unit gets an enthusiastic call. A signed IO, engineering time on the integration, or a live test on real traffic shows whether they mean it.
+4. **Look at who's in the sample.** Three calls with your happiest publisher feel productive and teach you little. Add a partner who churned and one who runs the SDK through an agency and never signed with you directly.
+5. **Make them rank it.** A publisher can agree the problem is real and still put it below their checkout redesign and their consent tool migration. Until it sits near the top of their list, plan for the pilot to slip.
 
 ## Predicting adoption
 
-1. **Assume the launch changes nothing.** Treat every design choice as an attempt to prove that wrong. Busy people default to what they did yesterday.
-2. **People act when they want it enough and it's easy enough.** More wanting rarely makes up for a hard first step. Look at the effort to start and whether the next step is obvious.
-3. **The team that built it can't see the friction.** Walk the flow as a first-timer and keep a friction log of every pause.
-4. **Weigh it against what they already do.** How much better is it on their own scale? If they wouldn't mention it to anyone, expect a trial and no habit.
-5. **The promise sets the bar.** Over-promise in the pitch and people try once and don't return.
-6. **Write the prediction down.** Where a cheap test could break it, run the test. Where none exists, commit and say the call rests on judgment.
+1. **Start from the expectation that partners keep doing what they do today.** Build every rollout choice to move them off that baseline. Busy integration teams stick with the version that works.
+2. **Action needs enough pull and little enough effort.** Extra enthusiasm rarely beats a painful first step. Check how much work it takes to begin and whether they can see what to do next.
+3. **Do the upgrade yourself, cold.** The team that wrote the SDK stopped noticing its rough edges long ago. Follow the public docs on a fresh project and note each spot where you stalled.
+4. **Compare it to their current setup in their terms.** If the new SDK saves a publisher's developer half a day a year, that's too small to switch for. If it lifts RPM enough that they'd bring it up in a QBR, it might be. Small gains get a test integration and then sit.
+5. **Promise only what the first month delivers.** A pitch that oversells the lift gets one test, a disappointing number, and silence.
+6. **Write the prediction down.** If a quick test could disprove it, such as a two-week holdout on one placement, run it. If no test is possible, make the call and state plainly that it rests on judgment.
 
 ## Persuading a buyer
 
-1. **The buyer is a person with a job and a boss.** Ask how this makes them look at their next review. Give them something they can show their own boss, like a number or a screenshot.
-2. **"Reduces cost" only works if cost is the buyer's own number.** If their scorecard has a cost line, savings are a win for them. If not, it's hard to believe and easy to shrug off; find what they're actually measured on.
-3. **Check your own read before defending it.** If the case only makes sense to you, you haven't left your own head. Name what you'd need to see to change your mind.
+1. **The buyer has a manager and a review coming.** Ask how saying yes changes the story they tell in that review. Hand them something to carry into it, like the revenue their slot earned or a before and after.
+2. **Lead with savings only when savings are on their scorecard.** A procurement lead measured on spend will care. A growth lead measured on conversion hears "reduces cost" as filler; find their metric and speak to it.
+3. **Test your read before you defend it.** When the only person convinced is you, you're still reasoning from your own seat. Write down what evidence would change your mind, then go look for it.
 
 ## Output
 

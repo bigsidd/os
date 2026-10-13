@@ -68,7 +68,6 @@ A good review: seven numbered problems, a legal check and a skeleton for the rew
 - **A verdict replaced a list.** "Not yet," with one paragraph of why, tells the sender what to do. Seven equal-weight problems don't.
 - **The why is tied to the email's job.** Both reviews spotted the euphemism. Only the lens review explained the cost: a partner trusts you less, and their finance team bounces it back.
 - **The fix arrived as finished text** with placeholders, not a skeleton to fill in. It's ready to send once the numbers go in.
-- **The money got specific.** It split old and new earnings on the net-45 switch and added a worked dollar example.
 
 ## What the lens missed
 

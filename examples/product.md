@@ -1,6 +1,6 @@
 # Product lens: worked example
 
-Two fresh agent sessions got the same message and the same prompt: "Should we commit to this? Give me your recommendation and what to reply." Both had my global instructions loaded. The only difference is that the second read [`lenses/product.md`](../lenses/product.md) first. Same model, 2026-10-13.
+Two fresh agent sessions got the same message and the same prompt: "Should we commit to this? Give me your recommendation and what to reply." Both had my global instructions loaded. The only difference is that the second read [`lenses/product.md`](../lenses/product.md) first. Same model, 2026-10-13. The lens wording was reorganized after this test; its rules are unchanged.
 
 The message is a fictional sample written for this test.
 
