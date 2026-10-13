@@ -26,17 +26,10 @@ Each lens is a markdown file with skill-style frontmatter. Drop it into a skills
 
 ## How the full system works
 
-```mermaid
-flowchart LR
-  T[Task] --> R[Registry<br/>which lens fires when]
-  R --> L[Lenses<br/>rule files]
-  L --> A[Agent acts]
-  A --> H[Hooks<br/>checks at write, push, send]
-  H --> O[Output]
-  Q[Monthly audit<br/>+ routing regression] -.-> R
-  Q -.-> L
-  Q -.-> H
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/system-dark.svg">
+  <img alt="Task flows to the registry, which picks the lenses; the agent acts; hooks check its output at write, push and send. A monthly audit tests the registry, lenses and hooks." src="assets/system-light.svg" width="100%">
+</picture>
 
 1. **Lenses.** Short files of numbered rules, each with a stated trigger: product, motivation, strategy, taste, commercial, design and more. Five are published here.
 2. **Registry.** One file lists every lens and the situation that fires it, and nothing else lists them. I learned that rule the hard way: twice, a hand-written list went stale and lenses silently stopped firing.
