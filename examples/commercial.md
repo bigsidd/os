@@ -49,4 +49,4 @@ A sound review. It reads the pressure correctly and proposes a sensible package.
 
 ## What the lens missed
 
-The baseline's advice not to answer the substance by Friday is sharper than the lens version's "reply before Friday with one counter." The lens says to know your walk-away before the call, but says nothing about refusing the other side's deadline. Worth adding.
+The baseline's advice not to answer the substance by Friday is sharper than the lens version's "reply before Friday with one counter." The lens says to know your walk-away before the call, but said nothing about refusing the other side's deadline. That rule was added to the lens after this test.

@@ -25,9 +25,10 @@ Terms used here: **margin** is what you keep per unit after paying the partner. 
 2. **Base the split on who contributes what.** Whose traffic, whose integration cost, whose brand risk. Agree on that first and the percentage follows. With several intermediaries, run the stacked math yourself; a fee chain that sounds fair can leave you almost nothing.
 3. **Every concession comes with an ask.** "I can move on the rate if we lock a 12-month minimum." A free concession invites the next request. Sometimes changing the structure (a flat fee instead of a percentage) solves their objection without moving your economics.
 4. **Write guarantees as floors with a clear exit.** The partner gets a specific trigger they can act on if you miss. You avoid an open-ended promise you can't keep.
-5. **Know your walk-away before the call.** If you can't really walk, lean on the constraints the other side has, like their timeline or switching cost. Bluffing a walk-away usually shows.
-6. **Renegotiate when the terms stop working, not when the relationship feels shaky.** Quietly honoring a deal that no longer clears your bar is the more common failure than a tough counterpart.
-7. **Say who carries currency risk.** A fixed payout in one currency to a partner paid in another leaks margin slowly. Quote in their currency or make the rate adjustable.
+5. **Their deadline isn't yours.** Acknowledge it in time, but answer the substance on your schedule, once you have the numbers.
+6. **Know your walk-away before the call.** If you can't really walk, lean on the constraints the other side has, like their timeline or switching cost. Bluffing a walk-away usually shows.
+7. **Renegotiate when the terms stop working, not when the relationship feels shaky.** Quietly honoring a deal that no longer clears your bar is the more common failure than a tough counterpart.
+8. **Say who carries currency risk.** A fixed payout in one currency to a partner paid in another leaks margin slowly. Quote in their currency or make the rate adjustable.
 
 ## Pricing both sides of a platform
 
