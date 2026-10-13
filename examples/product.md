@@ -1,6 +1,6 @@
 # Product lens: worked example
 
-Two fresh agent sessions got the same message and the same prompt: "Should we commit to this? Give me your recommendation and what to reply." Both had my global instructions loaded. The only difference is that the second read [`lenses/product.md`](../lenses/product.md) first. Same model, 2026-10-13. The lens wording was reorganized after this test; its rules are unchanged.
+Two fresh agent sessions got the same message and the same prompt: "Should we commit to this? Give me your recommendation and what to reply." Both had my global instructions loaded. The only difference is that the second read [`lenses/product.md`](../lenses/product.md) first. Same model, 2026-10-13.
 
 The message is a fictional sample written for this test.
 
@@ -10,37 +10,37 @@ The message is a fictional sample written for this test.
 
 ## Without the lens (excerpts)
 
-> Don't commit today, and don't say no. Commit to the problem and to a date for a scoped plan.
+> Don't say yes today. Say "yes to solving it" and commit to a scoped version after a quick check.
 >
-> "House offers always first, on every page" removes the highest-paying offer from slot one. If their house offers earn less per impression, the partner loses money too.
+> If house offers always sit ahead of advertiser offers, the paid slot goes to an offer that earns nothing. That likely drops RPM on the publisher's own inventory.
 >
-> A bespoke ranking override becomes the precedent every large partner asks for next.
+> If any advertiser contract promises placement, "always first" could breach it.
 >
-> Offer a scoped pilot: a reserved first position with a frequency cap, run as a holdout test.
+> Once one partner has guaranteed first position, every other large publisher will ask for it. Offer a capped pilot with a holdout group.
 
-A good answer. It catches the yield problem, flags precedent, and proposes a pilot.
+A good answer. It catches the yield problem, the contract risk and the precedent, and proposes a pilot.
 
 ## With the lens (excerpts)
 
-> **Recommendation: test first, with a narrowed scope.**
+> **Recommendation: test first.**
 >
-> "Always first, every page" is one answer to a goal nobody stated. The goal is probably one of three: promote their own offers, guarantee them a minimum placement, or avoid being outbid by advertisers. Each needs a different build. Ask which before scoping anything.
+> Their underlying goal is probably to control what their users see first, or to get paid for their own promotions. Get on a call and ask which.
 >
-> **It will recur.** Any publisher with its own products will want this once they hear it exists. If we build it, build a generic partner-level setting with caps, not a custom feature for one partner.
+> **Check the existing config before scoping any code.** A priority or pinned-slot setting may already do most of this. If it does, the answer is "configure what exists."
 >
-> **Check for an existing setting first.** Engineering should confirm whether priority or targeting already covers house offers before anyone scopes four weeks of work.
+> **Precedent:** picture the next three partners. If they'd want a capped version, build that version once, not a custom one for this account.
 >
-> **Kill test:** if always-first drops the partner's total earnings on the test slice, they may not actually want it.
+> **Stop result:** the test shows a large RPM drop with no gain, and the partner still insists on the full spec. Then it's a pricing and retention decision for leadership, not a build decision.
 >
-> **Outcome metrics:** partner revenue per session and our earnings on the account, against control.
+> **Spend limit:** one week of account and product time plus a config-level test. No engineering build until the goal is clear.
 
 ## What changed
 
-- **It asked what the partner is actually after.** The baseline judged the request as written. The lens split it into three possible goals that each lead to a different build.
-- **It turned a one-off into a product decision.** "This will recur, so build the general setting" is the difference between serving one loud partner and building something every partner can use.
-- **It checked for an existing setting before costing new work.** Four weeks of engineering may not be needed at all.
-- **It came with a kill test and an outcome metric,** so the pilot has a result that ends the debate either way.
+- **It asked what the partner is after** before judging the spec, and made that the first step.
+- **It looked for a no-code answer first.** Four weeks of engineering may not be needed at all.
+- **It turned one partner's ask into a product decision:** build the general version once, sized for the next three partners.
+- **It set limits before starting:** what a week of testing may cost, and the result that ends the debate.
 
 ## What the lens missed
 
-The baseline asked whether any advertiser contracts promise a position, which could make "always first" a breach. The lens didn't raise it. That check belongs in the commercial lens, which is why more than one lens runs on a call like this.
+The baseline checked whether advertiser contracts promise a position, which could make "always first" a breach. The lens didn't. That check lives in the commercial lens, which is why a call like this runs more than one lens.
