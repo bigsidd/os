@@ -26,6 +26,6 @@ Each page has the rule, why I hold it, an example and when it doesn't apply. Tes
 
 ## Credit
 
-Where an idea has a published source, its page names it. The wording and examples are mine.
+The wording and examples are mine. Each page's credit names published work I drew on; it isn't a complete list of where the ideas came from.
 
 Employer, partner and client details stay out of this repo. The rules don't need them.
