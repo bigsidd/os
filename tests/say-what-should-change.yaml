@@ -1,0 +1,20 @@
+- title: Improve site performance
+  body: The site should be faster.
+  expect:
+    decision: ask
+    cites: say-what-should-change
+- title: Make tests faster
+  body: The tests are slow.
+  expect:
+    decision: ask
+    cites: say-what-should-change
+- title: Cut the test run to under 20 seconds
+  body: The test run takes 40 seconds. Get it under 20.
+  expect:
+    decision: build
+    not: say-what-should-change
+- title: Crash when the input file is missing
+  body: Run with a missing file and it crashes. Done when those steps print an error instead.
+  expect:
+    decision: build
+    not: say-what-should-change

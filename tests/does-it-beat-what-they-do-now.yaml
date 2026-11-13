@@ -1,0 +1,20 @@
+- title: Rewrite the config loader in a faster library
+  body: A faster library exists. Nobody has reported slowness.
+  expect:
+    decision: refuse
+    cites: does-it-beat-what-they-do-now
+- title: People want a GUI
+  body: People want a GUI for this.
+  expect:
+    decision: ask
+    cites: does-it-beat-what-they-do-now
+- title: Crash on startup on Windows
+  body: Three people hit this crash this week and have stopped using the tool.
+  expect:
+    decision: build
+    not: does-it-beat-what-they-do-now
+- title: Fix the failing release build
+  body: The release build fails on a missing file, which blocks this week's release.
+  expect:
+    decision: build
+    not: does-it-beat-what-they-do-now

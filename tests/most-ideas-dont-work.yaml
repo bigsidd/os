@@ -1,0 +1,20 @@
+- title: Add badges to the README
+  body: Badges would look good.
+  expect:
+    decision: refuse
+    cites: most-ideas-dont-work
+- title: Add an animated hero
+  body: An animated hero would make the page look better.
+  expect:
+    decision: refuse
+    cites: most-ideas-dont-work
+- title: Fix the broken pricing page
+  body: People arriving from search land on a page that fails to load.
+  expect:
+    decision: build
+    not: most-ideas-dont-work
+- title: Show the first command on the home page
+  body: Visitors leave without trying it. Showing the first command should get them to run it.
+  expect:
+    decision: build
+    not: most-ideas-dont-work

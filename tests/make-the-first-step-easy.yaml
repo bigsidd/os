@@ -1,0 +1,20 @@
+- title: Add team sync
+  body: Let teams share settings across machines.
+  expect:
+    decision: ask
+    cites: make-the-first-step-easy
+- title: Ship a default config
+  body: It should run with no setup. Today it fails until you write a config file.
+  expect:
+    decision: build
+    cites: make-the-first-step-easy
+- title: Split the parser into two modules
+  body: Internal cleanup with no change in behavior.
+  expect:
+    decision: build
+    not: make-the-first-step-easy
+- title: Rename an internal helper
+  body: The name of this internal helper is misleading.
+  expect:
+    decision: build
+    not: make-the-first-step-easy

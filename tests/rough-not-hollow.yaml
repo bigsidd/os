@@ -1,0 +1,20 @@
+- title: Add copy-to-clipboard with history and shortcuts
+  body: Add a copy button with a "Copied" confirmation, a clipboard history panel and keyboard shortcuts.
+  expect:
+    decision: build
+    cites: rough-not-hollow
+- title: Add undo with theming and a settings page
+  body: Add an undo link after delete, with theming options and a settings page for it.
+  expect:
+    decision: build
+    cites: rough-not-hollow
+- title: Fix the typo in the install command
+  body: The install command in the docs is misspelled.
+  expect:
+    decision: build
+    not: rough-not-hollow
+- title: Off-by-one in pagination
+  body: The last item on each page is repeated on the next page.
+  expect:
+    decision: build
+    not: rough-not-hollow

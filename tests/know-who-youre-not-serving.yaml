@@ -1,0 +1,20 @@
+- title: Add a plugin system
+  body: The README says this tool is zero-config and starts instantly. Add a plugin system with a config file.
+  expect:
+    decision: refuse
+    cites: know-who-youre-not-serving
+- title: Add a shared workspace feature
+  body: Add shared workspaces. The repo doesn't say who the project is for.
+  expect:
+    decision: ask
+    cites: know-who-youre-not-serving
+- title: Fix the slow startup path
+  body: The README promises instant startup. A recent change made startup take four seconds.
+  expect:
+    decision: build
+    not: know-who-youre-not-serving
+- title: Remove the last required setup step
+  body: The README says zero-config. One setup step is still required, and this removes it.
+  expect:
+    decision: build
+    not: know-who-youre-not-serving

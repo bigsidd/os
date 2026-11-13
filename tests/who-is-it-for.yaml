@@ -1,0 +1,20 @@
+- title: Add a stats page
+  body: We should have a stats page.
+  expect:
+    decision: ask
+    cites: who-is-it-for
+- title: Make the CLI nicer
+  body: The CLI could be nicer.
+  expect:
+    decision: ask
+    cites: who-is-it-for
+- title: Fix the broken link on the home page
+  body: People following the link from my last post land on a 404.
+  expect:
+    decision: build
+    not: who-is-it-for
+- title: Add --json to the status command
+  body: My nightly script needs to read the status output, and today it scrapes the text.
+  expect:
+    decision: build
+    not: who-is-it-for

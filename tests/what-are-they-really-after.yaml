@@ -1,0 +1,20 @@
+- title: Email me the test results every morning
+  body: Send a daily email with the full test output.
+  expect:
+    decision: build
+    cites: what-are-they-really-after
+- title: Add a dark-mode toggle
+  body: Please add a toggle for dark mode.
+  expect:
+    decision: ask
+    cites: what-are-they-really-after
+- title: Crash when the config file is empty
+  body: Run the tool with an empty config file. It exits with a stack trace.
+  expect:
+    decision: build
+    not: what-are-they-really-after
+- title: Show the error message in the log line
+  body: I can't tell why jobs fail when I read the log, so include the error message in the log line.
+  expect:
+    decision: build
+    not: what-are-they-really-after

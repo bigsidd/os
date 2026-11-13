@@ -1,0 +1,20 @@
+- title: Bump Node to 22
+  body: Update the Node version to 22.
+  expect:
+    decision: build
+    cites: only-ask-what-changes-the-decision
+- title: Fix the wording on the empty state
+  body: Change "No data" to "Nothing here yet".
+  expect:
+    decision: build
+    cites: only-ask-what-changes-the-decision
+- title: Add login
+  body: Add login to the site.
+  expect:
+    decision: ask
+    not: only-ask-what-changes-the-decision
+- title: Improve things
+  body: Things could be better.
+  expect:
+    decision: ask
+    not: only-ask-what-changes-the-decision

@@ -1,0 +1,20 @@
+- title: Change the accent color
+  body: Change the accent color to blue. It is one line in the stylesheet.
+  expect:
+    decision: refuse
+    cites: cheapest-answer-first
+- title: Build a newsletter signup
+  body: Build a signup form with storage and a sending service. Nobody has asked for it yet.
+  expect:
+    decision: refuse
+    cites: cheapest-answer-first
+- title: Data loss on save
+  body: Saving twice quickly loses the second edit. There is no workaround.
+  expect:
+    decision: build
+    not: cheapest-answer-first
+- title: Automate the date bump in the footer
+  body: I edit this by hand every release and keep forgetting it.
+  expect:
+    decision: build
+    not: cheapest-answer-first
