@@ -42,6 +42,8 @@ Every rule has `tests/<name>.yaml`, with at least two cases where it fires and t
   expect: { decision: build, not: who-is-it-for }
 ```
 
+`decision` can be a list when more than one call is right, as long as the cited rule is the reason: `{ decision: [build, refuse], cites: code-before-a-model }`.
+
 A weigh rule fires through `weighs` instead of `cites`: the agent has to show that rule's weighing (the written prediction, or what it ranked first), and may also name the rule it cited.
 
 ```yaml

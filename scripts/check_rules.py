@@ -133,8 +133,11 @@ def check_cases(path, errors, citable_names, weigh_names=frozenset()):
             errors.append(f"{where}: needs a body")
             continue
         expect = case.get("expect")
-        if not isinstance(expect, dict) or expect.get("decision") not in DECISIONS:
-            errors.append(f"{where}: expect.decision must be one of {sorted(DECISIONS)}")
+        decision = expect.get("decision") if isinstance(expect, dict) else None
+        options = decision if isinstance(decision, list) else [decision]
+        if not options or not all(isinstance(d, str) and d in DECISIONS for d in options) \
+                or len(set(options)) != len(options):
+            errors.append(f"{where}: expect.decision must be one of {sorted(DECISIONS)}, or a list of them")
             continue
         if set(expect) - EXPECT_KEYS:
             errors.append(f"{where}: unknown expect keys {sorted(set(expect) - EXPECT_KEYS)}")
