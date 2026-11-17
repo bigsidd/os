@@ -2,9 +2,12 @@
 """Check rule files against the format in rules/README.md.
 
 Fails if a rule breaks the format, if two rules share a name or an order,
-if a rule the agent can cite has too few test cases, or if a rule name
-disappears or comes back without going through rules/retired.md.
+if any rule has too few test cases (a weigh rule's cases use `weighs`), if
+tests/results.json is malformed, or if a rule name disappears or comes back
+without going through rules/retired.md. Warns when results.json is older
+than the current rules or tests.
 """
+import json
 import argparse
 import pathlib
 import re
@@ -25,6 +28,8 @@ DECISIONS = {"build", "ask", "refuse"}
 MAX_RULE_CHARS = 200
 MIN_CASES = 2
 EXTRA_TEST_FILES = {"real.yaml"}
+EXPECT_KEYS = {"decision", "cites", "not", "weighs"}
+RESULTS = TESTS / "results.json"
 
 
 def front_matter(text):
@@ -73,6 +78,33 @@ def check_rule(path, errors):
     return meta
 
 
+def check_results(errors):
+    """Validate tests/results.json (written by the Midwatch eval) if present.
+    Returns warnings; a stale file is expected between a rules change and the next run."""
+    if not RESULTS.exists():
+        return []
+    try:
+        data = json.loads(RESULTS.read_text())
+    except ValueError as exc:
+        errors.append(f"tests/results.json: not valid JSON: {exc}")
+        return []
+    need = {"date", "os_commit", "model", "samples", "cases", "passed", "total"}
+    if not isinstance(data, dict) or need - set(data):
+        errors.append(f"tests/results.json: missing keys {sorted(need - set(data or {}))}")
+        return []
+    ints = all(isinstance(data[k], int) and not isinstance(data[k], bool) and data[k] >= 0
+               for k in ("samples", "cases", "passed", "total"))
+    if not ints or data["total"] != data["cases"] * data["samples"] or data["passed"] > data["total"]:
+        errors.append("tests/results.json: counts don't add up (total must be cases x samples)")
+        return []
+    diff = subprocess.run(
+        ["git", "diff", "--quiet", str(data["os_commit"]), "HEAD", "--", "rules", "tests",
+         ":!tests/results.json"], cwd=ROOT, capture_output=True)
+    if diff.returncode != 0:
+        return [f"tests/results.json was run at {data['os_commit']}; rules or tests changed since, re-run the eval"]
+    return []
+
+
 def retired_names(text):
     return set(RETIRED.findall(text.partition("## Retired")[2]))
 
@@ -81,7 +113,7 @@ def citable(meta):
     return isinstance(meta.get("decides"), list) and "weigh" not in meta["decides"]
 
 
-def check_cases(path, errors, citable_names):
+def check_cases(path, errors, citable_names, weigh_names=frozenset()):
     label = f"tests/{path.name}"
     try:
         cases = yaml.safe_load(path.read_text())
@@ -104,12 +136,29 @@ def check_cases(path, errors, citable_names):
         if not isinstance(expect, dict) or expect.get("decision") not in DECISIONS:
             errors.append(f"{where}: expect.decision must be one of {sorted(DECISIONS)}")
             continue
-        if ("cites" in expect) == ("not" in expect):
-            errors.append(f"{where}: expect needs exactly one of cites or not")
+        if set(expect) - EXPECT_KEYS:
+            errors.append(f"{where}: unknown expect keys {sorted(set(expect) - EXPECT_KEYS)}")
             continue
-        target = expect.get("cites", expect.get("not"))
-        if target not in citable_names:
-            errors.append(f"{where}: '{target}' is not a rule the agent can cite")
+        if "weighs" in expect:
+            if expect["weighs"] not in weigh_names:
+                errors.append(f"{where}: weighs '{expect['weighs']}' is not a weigh rule")
+                continue
+            if "not" in expect:
+                errors.append(f"{where}: a weighs case can't also use not")
+                continue
+            if "cites" in expect and expect["cites"] not in citable_names:
+                errors.append(f"{where}: '{expect['cites']}' is not a rule the agent can cite")
+                continue
+            good.append(expect)
+            continue
+        if ("cites" in expect) == ("not" in expect):
+            errors.append(f"{where}: expect needs exactly one of cites, not or weighs")
+            continue
+        if "cites" in expect and expect["cites"] not in citable_names:
+            errors.append(f"{where}: '{expect['cites']}' is not a rule the agent can cite")
+            continue
+        if "not" in expect and expect["not"] not in citable_names | weigh_names:
+            errors.append(f"{where}: '{expect['not']}' is not a rule")
             continue
         good.append(expect)
     return good
@@ -165,13 +214,17 @@ def main():
         errors.append(f"'{name}' is retired and can't be used again")
 
     citable_names = {m["name"] for m in rules if citable(m)}
-    for name in sorted(citable_names):
+    weigh_names = {m["name"] for m in rules if not citable(m)}
+    n_cases = 0
+    for name in sorted(citable_names | weigh_names):
         path = TESTS / f"{name}.yaml"
         if not path.exists():
             errors.append(f"{name}: missing tests/{name}.yaml")
             continue
-        expects = check_cases(path, errors, citable_names)
-        fires = sum(1 for e in expects if e.get("cites") == name)
+        expects = check_cases(path, errors, citable_names, weigh_names)
+        n_cases += len(expects)
+        key = "cites" if name in citable_names else "weighs"
+        fires = sum(1 for e in expects if e.get(key) == name)
         holds = sum(1 for e in expects if e.get("not") == name)
         if fires < MIN_CASES:
             errors.append(f"{name}: needs {MIN_CASES} cases where it fires, has {fires}")
@@ -180,9 +233,11 @@ def main():
 
     for path in sorted(TESTS.glob("*.yaml")):
         if path.name in EXTRA_TEST_FILES:
-            check_cases(path, errors, citable_names)
-        elif path.stem not in citable_names:
-            errors.append(f"tests/{path.name}: no rule the agent can cite has this name")
+            check_cases(path, errors, citable_names, weigh_names)
+        elif path.stem not in citable_names | weigh_names:
+            errors.append(f"tests/{path.name}: no rule has this name")
+
+    warnings = check_results(errors)
 
     if usable_base(args.base):
         for name in sorted(base_rule_names(args.base) - live - retired):
@@ -193,7 +248,10 @@ def main():
     if errors:
         print("\n".join(f"FAIL {e}" for e in errors))
         return 1
-    print(f"OK: {len(rules)} rules, {len(citable_names)} citable, {len(retired)} retired")
+    for w in warnings:
+        print(f"WARN {w}")
+    print(f"OK: {len(rules)} rules, {len(citable_names)} citable, {len(weigh_names)} weigh, "
+          f"{n_cases} cases, {len(retired)} retired")
     return 0
 
 

@@ -1,0 +1,12 @@
+- title: Pick storage for the notes app
+  body: It must run on a $5 server and back up with one command. Full-text search and multi-device sync would be nice.
+  expect: { decision: build, weighs: rank-what-matters }
+- title: Export or bulk edit
+  body: Many users ask for export. Two of the largest want bulk edit. Only one fits this week.
+  expect: { decision: ask, weighs: rank-what-matters }
+- title: Crash when the file list is empty
+  body: Opening a folder with no files crashes the app. Steps to reproduce are in the log.
+  expect: { decision: build, not: rank-what-matters }
+- title: Update the license year
+  body: LICENSE still says 2025.
+  expect: { decision: build, not: rank-what-matters }

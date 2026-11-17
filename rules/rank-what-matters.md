@@ -2,7 +2,7 @@
 name: rank-what-matters
 rule: When rules or options pull in different directions, rank what this decision has to get right, then pick. Every yes or no carries its reason. "Not now, I'll decide Friday" is an answer.
 decides: [weigh]
-order: 12
+order: 14
 fires_when: Rules or options pull in different directions.
 not_when: Never cited as the reason for a call.
 credit: Kepner-Tregoe on decision analysis.

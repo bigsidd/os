@@ -1,0 +1,12 @@
+- title: Switch the summarizer to the new prompt
+  body: The new prompt reads better on the two threads I tried. Ship it.
+  expect: { decision: ask, cites: show-where-it-breaks }
+- title: Let the bot label new issues on its own
+  body: The model already suggests labels. Have it apply them directly, with no review step.
+  expect: { decision: ask, cites: show-where-it-breaks }
+- title: Fix the typo in the summarizer's error message
+  body: It says "Sumary unavailable".
+  expect: { decision: build, not: show-where-it-breaks }
+- title: Retry once when the model call times out
+  body: Today a timeout shows a blank box. Retry once, then show "Summary unavailable".
+  expect: { decision: build, not: show-where-it-breaks }

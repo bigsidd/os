@@ -2,7 +2,7 @@
 name: play-it-forward
 rule: Before approving a change, picture how the person reacts, then what happens after that. Write the prediction down so it can be wrong.
 decides: [weigh]
-order: 11
+order: 13
 fires_when: A change affects how people behave.
 not_when: Never cited as the reason for a call.
 credit: Second-order thinking, as written up by Farnam Street. The pre-mortem is Gary Klein's.
