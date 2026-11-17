@@ -22,7 +22,7 @@ I build products and the partnerships that make them pay. Eighteen years across 
 11. **[Play it forward.](rules/play-it-forward.md)** Picture how the person reacts and what happens after that. Write the prediction down so it can be wrong.
 12. **[Rank what matters, then choose, and say why.](rules/rank-what-matters.md)** When rules pull against each other, decide what this call has to get right. Every yes or no carries its reason.
 
-Each page has the rule, why I hold it, an example and when it doesn't apply. Test cases are in [`tests/`](tests/).
+Each page has the rule, when it applies and when it doesn't, why I hold it and an example. Rules 1–10 each have test cases in [`tests/`](tests/). Rules 11 and 12 only weigh the others, so they're never the reason for a call and have no cases of their own.
 
 ## Credit
 
