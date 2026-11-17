@@ -1,6 +1,6 @@
 # How I make product calls
 
-**Twelve rules for deciding what's worth building.**
+**Fourteen rules for deciding what's worth building.**
 
 I build products and the partnerships that make them pay. Eighteen years across customer success, partnerships and product, the last decade in adtech. These days I build most of my own tools with agents. More at [siddharthshah.me](https://siddharthshah.me).
 
@@ -17,12 +17,17 @@ I build products and the partnerships that make them pay. Eighteen years across 
 9. **[Say what should change.](rules/say-what-should-change.md)** "Shipped" is the middle of the story. Name the result and how you'd see it.
 10. **[Only ask what changes the decision.](rules/only-ask-what-changes-the-decision.md)** If every answer leads to the same call, make the call.
 
+## When a model does the work
+
+11. **[Code before a model.](rules/code-before-a-model.md)** Use a model only for what code can't do. If a rule, a lookup or a form gets the result, use that.
+12. **[Show where it breaks.](rules/show-where-it-breaks.md)** Before shipping anything a model decides, read real outputs, name how it fails, and set the pass bar it has to clear.
+
 ## Weighing them
 
-11. **[Play it forward.](rules/play-it-forward.md)** Picture how the person reacts and what happens after that. Write the prediction down so it can be wrong.
-12. **[Rank what matters, then choose, and say why.](rules/rank-what-matters.md)** When rules pull against each other, decide what this call has to get right. Every yes or no carries its reason.
+13. **[Play it forward.](rules/play-it-forward.md)** Picture how the person reacts and what happens after that. Write the prediction down so it can be wrong.
+14. **[Rank what matters, then choose, and say why.](rules/rank-what-matters.md)** When rules pull against each other, decide what this call has to get right. Every yes or no carries its reason.
 
-Each page has the rule, when it applies and when it doesn't, why I hold it and an example. Rules 1–10 each have test cases in [`tests/`](tests/). Rules 11 and 12 only weigh the others, so they're never the reason for a call and have no cases of their own.
+Each page has the rule, when it applies and when it doesn't, why I hold it and an example. Every rule has test cases in [`tests/`](tests/): four per rule, 56 in all. Rules 13 and 14 only weigh the others, so their cases check the weighing rather than a citation. [Midwatch](https://github.com/bigsidd/midwatch) runs every case against an agent with `--eval-os` and writes the results to `tests/results.json`.
 
 ## Credit
 

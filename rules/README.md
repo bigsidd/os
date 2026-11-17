@@ -24,14 +24,14 @@ credit: Who the idea comes from. Leave blank if it's mine.
 |---|---|
 | `name` | Plain kebab-case, same as the file name. Permanent. |
 | `rule` | The rule itself. |
-| `decides` | Any of `build`, `ask`, `refuse`. Use `weigh`, alone, for a rule that helps weigh other rules and is never cited as the reason for a call. |
+| `decides` | Any of `build`, `ask`, `refuse`. Use `weigh`, alone, for a rule that helps weigh other rules and is never cited as the reason for a call. Its tests check that the agent shows the weighing, not that it cites the rule. |
 | `order` | The order rules are checked in. Each number is used once. It isn't a ranking. |
 | `fires_when`, `not_when` | When the rule applies, and when it doesn't. |
 | `credit` | The originator of the idea, if there is one. |
 
 ## Tests
 
-Every rule that can be cited has `tests/<name>.yaml`, with at least two cases where it fires and two where it must not:
+Every rule has `tests/<name>.yaml`, with at least two cases where it fires and two where it must not:
 
 ```yaml
 - title: Add a stats page
@@ -41,6 +41,18 @@ Every rule that can be cited has `tests/<name>.yaml`, with at least two cases wh
   body: The issue text.
   expect: { decision: build, not: who-is-it-for }
 ```
+
+A weigh rule fires through `weighs` instead of `cites`: the agent has to show that rule's weighing (the written prediction, or what it ranked first), and may also name the rule it cited.
+
+```yaml
+- title: Auto-close stale issues
+  body: The issue text.
+  expect: { decision: ask, weighs: play-it-forward }
+```
+
+## Results
+
+`tests/results.json` is the last time an agent actually ran every case: the date, the rules commit, the model, how many samples per case, and how many passed. [Midwatch](https://github.com/bigsidd/midwatch) runs it with `--eval-os`. The check fails if the file doesn't add up, and warns when rules or tests changed after it was run.
 
 
 ## Removing a rule
