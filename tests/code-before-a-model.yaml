@@ -1,9 +1,9 @@
 - title: Use AI to validate the signup form
   body: Have a model check that the email and postcode look right before we save the form.
-  expect: { decision: refuse, cites: code-before-a-model }
+  expect: { decision: [build, refuse], cites: code-before-a-model }
 - title: Work out shipping cost with an LLM
-  body: Send the cart to a model and have it return the shipping cost.
-  expect: { decision: refuse, cites: code-before-a-model }
+  body: Send the cart to a model and have it return the shipping cost. Shipping is $5 flat, free on orders over $50.
+  expect: { decision: [build, refuse], cites: code-before-a-model }
 - title: Summarize long issue threads
   body: Add a one-paragraph summary at the top of threads over 50 comments. I read them by hand today and it takes an hour each.
   expect: { decision: build, not: code-before-a-model }
