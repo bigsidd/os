@@ -9,12 +9,12 @@
     decision: ask
     cites: know-who-youre-not-serving
 - title: Fix the slow startup path
-  body: The README promises instant startup. A recent change made startup take four seconds.
+  body: The README promises instant startup. A recent change made cli.py load every stored thread before it starts, so startup takes four seconds.
   expect:
     decision: build
     not: know-who-youre-not-serving
 - title: Remove the last required setup step
-  body: The README says zero-config. One setup step is still required, and this removes it.
+  body: The README says zero-config, but cli.py still exits until you run "tally init" to write a config. Make the first run write the defaults itself.
   expect:
     decision: build
     not: know-who-youre-not-serving

@@ -1,10 +1,10 @@
 - title: Add copy-to-clipboard with history and shortcuts
-  body: Add a copy button with a "Copied" confirmation, a clipboard history panel and keyboard shortcuts.
+  body: Add a copy button next to the install command in docs/install.md, with a "Copied" confirmation, a clipboard history panel and keyboard shortcuts.
   expect:
     decision: build
     cites: rough-not-hollow
 - title: Add undo with theming and a settings page
-  body: Add an undo link after delete, with theming options and a settings page for it.
+  body: Add an undo link after deleting a comment in a thread, with theming options and a settings page for it.
   expect:
     decision: build
     cites: rough-not-hollow
@@ -14,7 +14,7 @@
     decision: build
     not: rough-not-hollow
 - title: Off-by-one in pagination
-  body: The last item on each page is repeated on the next page.
+  body: In the issue tracker list (app/threads.py), the last issue on each page is repeated as the first on the next page.
   expect:
     decision: build
     not: rough-not-hollow

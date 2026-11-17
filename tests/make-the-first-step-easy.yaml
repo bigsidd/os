@@ -8,13 +8,13 @@
   expect:
     decision: build
     cites: make-the-first-step-easy
-- title: Split the parser into two modules
-  body: Internal cleanup with no change in behavior.
+- title: Move argument parsing out of cli.py
+  body: Move the argument parsing in cli.py into a new cli_args.py. Internal cleanup with no change in behavior.
   expect:
     decision: build
     not: make-the-first-step-easy
 - title: Rename an internal helper
-  body: The name of this internal helper is misleading.
+  body: In app/storage.py, get_all() only returns open threads, so the name is misleading. Rename it to get_open(). Only app/threads.py calls it.
   expect:
     decision: build
     not: make-the-first-step-easy

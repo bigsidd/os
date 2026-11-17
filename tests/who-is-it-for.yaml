@@ -9,7 +9,7 @@
     decision: ask
     cites: who-is-it-for
 - title: Fix the broken link on the home page
-  body: People following the link from my last post land on a 404.
+  body: The Docs link on index.html points to /doc/ instead of /docs/, so people following it from my last post land on a 404.
   expect:
     decision: build
     not: who-is-it-for
