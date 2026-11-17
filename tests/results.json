@@ -1,0 +1,624 @@
+{
+  "model": "sonnet",
+  "midwatch_commit": "165219c3fdcb0f504eb2223ff042d885e3ade454",
+  "midwatch_dirty": false,
+  "planner_prompt_sha256": "b964f0055ff22765",
+  "schema": 1,
+  "date": "2026-11-17",
+  "os_commit": "1ae113d823b0417dc293e5869b6a7662f63e9000",
+  "samples": 3,
+  "cases": 56,
+  "calls": 168,
+  "passed": 111,
+  "total": 168,
+  "rate": 0.6607,
+  "cases_passed": 31,
+  "bar": {
+    "overall": 0.9,
+    "per_rule": 0.75,
+    "no_regressions": true
+  },
+  "bar_met": false,
+  "below_bar_rules": [
+    "cheapest-answer-first",
+    "does-it-beat-what-they-do-now",
+    "know-who-youre-not-serving",
+    "make-the-first-step-easy",
+    "only-ask-what-changes-the-decision",
+    "play-it-forward",
+    "rough-not-hollow",
+    "say-what-should-change",
+    "what-are-they-really-after"
+  ],
+  "regressions": [],
+  "per_rule": {
+    "cheapest-answer-first": {
+      "passed": 8,
+      "total": 12
+    },
+    "code-before-a-model": {
+      "passed": 9,
+      "total": 12
+    },
+    "does-it-beat-what-they-do-now": {
+      "passed": 6,
+      "total": 12
+    },
+    "know-who-youre-not-serving": {
+      "passed": 8,
+      "total": 12
+    },
+    "make-the-first-step-easy": {
+      "passed": 5,
+      "total": 12
+    },
+    "most-ideas-dont-work": {
+      "passed": 12,
+      "total": 12
+    },
+    "only-ask-what-changes-the-decision": {
+      "passed": 5,
+      "total": 12
+    },
+    "play-it-forward": {
+      "passed": 6,
+      "total": 12
+    },
+    "rank-what-matters": {
+      "passed": 10,
+      "total": 12
+    },
+    "rough-not-hollow": {
+      "passed": 8,
+      "total": 12
+    },
+    "say-what-should-change": {
+      "passed": 5,
+      "total": 12
+    },
+    "show-where-it-breaks": {
+      "passed": 12,
+      "total": 12
+    },
+    "what-are-they-really-after": {
+      "passed": 5,
+      "total": 12
+    },
+    "who-is-it-for": {
+      "passed": 12,
+      "total": 12
+    }
+  },
+  "failures": [
+    {
+      "rule": "cheapest-answer-first",
+      "title": "Build a newsletter signup",
+      "expect": {
+        "decision": "refuse",
+        "cites": "cheapest-answer-first"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "cited most-ideas-dont-work, expected cheapest-answer-first"
+      ]
+    },
+    {
+      "rule": "cheapest-answer-first",
+      "title": "Automate the date bump in the footer",
+      "expect": {
+        "decision": "build",
+        "not": "cheapest-answer-first"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "decided ask, expected build"
+      ]
+    },
+    {
+      "rule": "code-before-a-model",
+      "title": "Summarize long issue threads",
+      "expect": {
+        "decision": "build",
+        "not": "code-before-a-model"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided ask, expected build",
+        "used code-before-a-model, which should stay quiet here"
+      ]
+    },
+    {
+      "rule": "does-it-beat-what-they-do-now",
+      "title": "Rewrite the config loader in a faster library",
+      "expect": {
+        "decision": "refuse",
+        "cites": "does-it-beat-what-they-do-now"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "cited most-ideas-dont-work, expected does-it-beat-what-they-do-now"
+      ]
+    },
+    {
+      "rule": "does-it-beat-what-they-do-now",
+      "title": "People want a GUI",
+      "expect": {
+        "decision": "ask",
+        "cites": "does-it-beat-what-they-do-now"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "cited who-is-it-for, expected does-it-beat-what-they-do-now"
+      ]
+    },
+    {
+      "rule": "know-who-youre-not-serving",
+      "title": "Add a plugin system",
+      "expect": {
+        "decision": "refuse",
+        "cites": "know-who-youre-not-serving"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "invalid plan: rule.changed must be a non-empty string of at most 200 chars"
+      ]
+    },
+    {
+      "rule": "know-who-youre-not-serving",
+      "title": "Add a shared workspace feature",
+      "expect": {
+        "decision": "ask",
+        "cites": "know-who-youre-not-serving"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided refuse, expected ask"
+      ]
+    },
+    {
+      "rule": "make-the-first-step-easy",
+      "title": "Add team sync",
+      "expect": {
+        "decision": "ask",
+        "cites": "make-the-first-step-easy"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided refuse, expected ask"
+      ]
+    },
+    {
+      "rule": "make-the-first-step-easy",
+      "title": "Ship a default config",
+      "expect": {
+        "decision": "build",
+        "cites": "make-the-first-step-easy"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "cited nothing, expected make-the-first-step-easy"
+      ]
+    },
+    {
+      "rule": "make-the-first-step-easy",
+      "title": "Move argument parsing out of cli.py",
+      "expect": {
+        "decision": "build",
+        "not": "make-the-first-step-easy"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided refuse, expected build"
+      ]
+    },
+    {
+      "rule": "only-ask-what-changes-the-decision",
+      "title": "Bump Python to 3.13",
+      "expect": {
+        "decision": "build",
+        "cites": "only-ask-what-changes-the-decision"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided refuse, expected build"
+      ]
+    },
+    {
+      "rule": "only-ask-what-changes-the-decision",
+      "title": "Fix the wording on the empty state",
+      "expect": {
+        "decision": "build",
+        "cites": "only-ask-what-changes-the-decision"
+      },
+      "samples_failed": 2,
+      "reasons": [
+        "cited nothing, expected only-ask-what-changes-the-decision"
+      ]
+    },
+    {
+      "rule": "only-ask-what-changes-the-decision",
+      "title": "Improve things",
+      "expect": {
+        "decision": "ask",
+        "not": "only-ask-what-changes-the-decision"
+      },
+      "samples_failed": 2,
+      "reasons": [
+        "invalid plan: rule who-is-it-for decides ask, not refuse"
+      ]
+    },
+    {
+      "rule": "play-it-forward",
+      "title": "Auto-close stale issues",
+      "expect": {
+        "decision": "ask",
+        "weighs": "play-it-forward"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided refuse, expected ask",
+        "invalid plan: weighed.note must be a non-empty string of at most 200 chars"
+      ]
+    },
+    {
+      "rule": "play-it-forward",
+      "title": "Rename the internal cache module",
+      "expect": {
+        "decision": "build",
+        "not": "play-it-forward"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided refuse, expected build"
+      ]
+    },
+    {
+      "rule": "rank-what-matters",
+      "title": "Pick storage for comment threads",
+      "expect": {
+        "decision": "build",
+        "weighs": "rank-what-matters"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "weighed nothing, expected rank-what-matters"
+      ]
+    },
+    {
+      "rule": "rank-what-matters",
+      "title": "Export or bulk edit",
+      "expect": {
+        "decision": "ask",
+        "weighs": "rank-what-matters"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "weighed nothing, expected rank-what-matters"
+      ]
+    },
+    {
+      "rule": "rough-not-hollow",
+      "title": "Add copy-to-clipboard with history and shortcuts",
+      "expect": {
+        "decision": "build",
+        "cites": "rough-not-hollow"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "cited what-are-they-really-after, expected rough-not-hollow",
+        "decided refuse, expected build"
+      ]
+    },
+    {
+      "rule": "rough-not-hollow",
+      "title": "Add undo with theming and a settings page",
+      "expect": {
+        "decision": "build",
+        "cites": "rough-not-hollow"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "cited what-are-they-really-after, expected rough-not-hollow"
+      ]
+    },
+    {
+      "rule": "say-what-should-change",
+      "title": "Improve site performance",
+      "expect": {
+        "decision": "ask",
+        "cites": "say-what-should-change"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided refuse, expected ask",
+        "invalid plan: rule who-is-it-for decides ask, not refuse"
+      ]
+    },
+    {
+      "rule": "say-what-should-change",
+      "title": "Make tests faster",
+      "expect": {
+        "decision": "ask",
+        "cites": "say-what-should-change"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "cited who-is-it-for, expected say-what-should-change"
+      ]
+    },
+    {
+      "rule": "say-what-should-change",
+      "title": "Cut the test run to under 20 seconds",
+      "expect": {
+        "decision": "build",
+        "not": "say-what-should-change"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "decided refuse, expected build"
+      ]
+    },
+    {
+      "rule": "what-are-they-really-after",
+      "title": "Email me the test results every morning",
+      "expect": {
+        "decision": "build",
+        "cites": "what-are-they-really-after"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided refuse, expected build"
+      ]
+    },
+    {
+      "rule": "what-are-they-really-after",
+      "title": "Add a dark-mode toggle",
+      "expect": {
+        "decision": "ask",
+        "cites": "what-are-they-really-after"
+      },
+      "samples_failed": 3,
+      "reasons": [
+        "decided refuse, expected ask"
+      ]
+    },
+    {
+      "rule": "what-are-they-really-after",
+      "title": "Crash when the config file is empty",
+      "expect": {
+        "decision": "build",
+        "not": "what-are-they-really-after"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "invalid plan: model output is not a JSON object"
+      ]
+    }
+  ],
+  "cases_run": [
+    [
+      "cheapest-answer-first",
+      "Add a settings page for the accent color"
+    ],
+    [
+      "cheapest-answer-first",
+      "Build a newsletter signup"
+    ],
+    [
+      "cheapest-answer-first",
+      "Data loss on save"
+    ],
+    [
+      "cheapest-answer-first",
+      "Automate the date bump in the footer"
+    ],
+    [
+      "code-before-a-model",
+      "Use AI to validate the signup form"
+    ],
+    [
+      "code-before-a-model",
+      "Work out shipping cost with an LLM"
+    ],
+    [
+      "code-before-a-model",
+      "Summarize long issue threads"
+    ],
+    [
+      "code-before-a-model",
+      "Fix the date format in the footer"
+    ],
+    [
+      "does-it-beat-what-they-do-now",
+      "Rewrite the config loader in a faster library"
+    ],
+    [
+      "does-it-beat-what-they-do-now",
+      "People want a GUI"
+    ],
+    [
+      "does-it-beat-what-they-do-now",
+      "Crash on startup on Windows"
+    ],
+    [
+      "does-it-beat-what-they-do-now",
+      "Fix the failing release build"
+    ],
+    [
+      "know-who-youre-not-serving",
+      "Add a plugin system"
+    ],
+    [
+      "know-who-youre-not-serving",
+      "Add a shared workspace feature"
+    ],
+    [
+      "know-who-youre-not-serving",
+      "Fix the slow startup path"
+    ],
+    [
+      "know-who-youre-not-serving",
+      "Remove the last required setup step"
+    ],
+    [
+      "make-the-first-step-easy",
+      "Add team sync"
+    ],
+    [
+      "make-the-first-step-easy",
+      "Ship a default config"
+    ],
+    [
+      "make-the-first-step-easy",
+      "Move argument parsing out of cli.py"
+    ],
+    [
+      "make-the-first-step-easy",
+      "Rename an internal helper"
+    ],
+    [
+      "most-ideas-dont-work",
+      "Add badges to the README"
+    ],
+    [
+      "most-ideas-dont-work",
+      "Add an animated hero"
+    ],
+    [
+      "most-ideas-dont-work",
+      "Fix the broken pricing page"
+    ],
+    [
+      "most-ideas-dont-work",
+      "Show the first command on the home page"
+    ],
+    [
+      "only-ask-what-changes-the-decision",
+      "Bump Python to 3.13"
+    ],
+    [
+      "only-ask-what-changes-the-decision",
+      "Fix the wording on the empty state"
+    ],
+    [
+      "only-ask-what-changes-the-decision",
+      "Add login"
+    ],
+    [
+      "only-ask-what-changes-the-decision",
+      "Improve things"
+    ],
+    [
+      "play-it-forward",
+      "Auto-close stale issues"
+    ],
+    [
+      "play-it-forward",
+      "Hide the cancel button"
+    ],
+    [
+      "play-it-forward",
+      "Correct the copyright year"
+    ],
+    [
+      "play-it-forward",
+      "Rename the internal cache module"
+    ],
+    [
+      "rank-what-matters",
+      "Pick storage for comment threads"
+    ],
+    [
+      "rank-what-matters",
+      "Export or bulk edit"
+    ],
+    [
+      "rank-what-matters",
+      "Crash when the file list is empty"
+    ],
+    [
+      "rank-what-matters",
+      "Update the license year"
+    ],
+    [
+      "rough-not-hollow",
+      "Add copy-to-clipboard with history and shortcuts"
+    ],
+    [
+      "rough-not-hollow",
+      "Add undo with theming and a settings page"
+    ],
+    [
+      "rough-not-hollow",
+      "Fix the typo in the install command"
+    ],
+    [
+      "rough-not-hollow",
+      "Off-by-one in pagination"
+    ],
+    [
+      "say-what-should-change",
+      "Improve site performance"
+    ],
+    [
+      "say-what-should-change",
+      "Make tests faster"
+    ],
+    [
+      "say-what-should-change",
+      "Cut the test run to under 20 seconds"
+    ],
+    [
+      "say-what-should-change",
+      "Crash when the input file is missing"
+    ],
+    [
+      "show-where-it-breaks",
+      "Switch the summarizer to the new prompt"
+    ],
+    [
+      "show-where-it-breaks",
+      "Let the bot label new issues on its own"
+    ],
+    [
+      "show-where-it-breaks",
+      "Fix the typo in the summarizer's error message"
+    ],
+    [
+      "show-where-it-breaks",
+      "Retry once when the model call times out"
+    ],
+    [
+      "what-are-they-really-after",
+      "Email me the test results every morning"
+    ],
+    [
+      "what-are-they-really-after",
+      "Add a dark-mode toggle"
+    ],
+    [
+      "what-are-they-really-after",
+      "Crash when the config file is empty"
+    ],
+    [
+      "what-are-they-really-after",
+      "Show the error message in the log line"
+    ],
+    [
+      "who-is-it-for",
+      "Add a stats page"
+    ],
+    [
+      "who-is-it-for",
+      "Make the CLI nicer"
+    ],
+    [
+      "who-is-it-for",
+      "Fix the broken link on the home page"
+    ],
+    [
+      "who-is-it-for",
+      "Add --json to the status command"
+    ]
+  ]
+}
