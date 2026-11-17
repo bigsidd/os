@@ -4,7 +4,7 @@ rule: Ask a question only if the answers would lead to different decisions. Othe
 decides: [build]
 order: 10
 fires_when: A question is about to be asked whose answers would all lead to the same call.
-not_when: Different answers would lead to different decisions.
+not_when: Different answers would lead to different decisions. Then ask, and cite the rule that made the detail matter, never this one.
 credit: Ronald Howard, "Information Value Theory" (1966).
 ---
 
@@ -14,4 +14,5 @@ credit: Ronald Howard, "Information Value Theory" (1966).
 
 **Example.** "Bump Node to 22." Asking why 22 changes nothing. "Add login": password, email link or Google are three different builds, so that question earns its place.
 
-**Changes.** None yet.
+**Changes.**
+- 2026-11-17: not when now says never to cite this rule as the reason for asking. The first eval runs cited it on questions, which is the opposite of what it says.

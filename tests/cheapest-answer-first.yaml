@@ -1,5 +1,5 @@
-- title: Change the accent color
-  body: Change the accent color to blue. It is one line in the stylesheet.
+- title: Add a settings page for the accent color
+  body: Add a settings page to change the accent color. Only I change it, about once a year, and it is one line in the stylesheet.
   expect:
     decision: refuse
     cites: cheapest-answer-first
