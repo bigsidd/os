@@ -8,5 +8,5 @@
   body: The footer still says 2025.
   expect: { decision: build, not: play-it-forward }
 - title: Rename the internal cache module
-  body: Rename cachex to cache. Only our own code imports it.
+  body: Rename app/storage.py to app/store.py. Only our own code imports it.
   expect: { decision: build, not: play-it-forward }

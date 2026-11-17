@@ -1,5 +1,5 @@
-- title: Pick storage for the notes app
-  body: It must run on a $5 server and back up with one command. Full-text search and multi-device sync would be nice.
+- title: Pick storage for comment threads
+  body: Threads are kept in memory today and lost on restart. Storage must run on a $5 server and back up with one command. Full-text search and multi-device sync would be nice.
   expect: { decision: build, weighs: rank-what-matters }
 - title: Export or bulk edit
   body: Many users ask for export. Two of the largest want bulk edit. Only one fits this week.

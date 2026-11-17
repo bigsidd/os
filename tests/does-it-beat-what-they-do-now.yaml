@@ -9,12 +9,12 @@
     decision: ask
     cites: does-it-beat-what-they-do-now
 - title: Crash on startup on Windows
-  body: Three people hit this crash this week and have stopped using the tool.
+  body: Three people hit this crash this week and have stopped using the tool. The traceback ends in config.py, which builds the settings path with a "/" and fails on Windows.
   expect:
     decision: build
     not: does-it-beat-what-they-do-now
 - title: Fix the failing release build
-  body: The release build fails on a missing file, which blocks this week's release.
+  body: The release build fails because docs/install.md links to docs/quickstart.md, which was deleted last week. This blocks this week's release.
   expect:
     decision: build
     not: does-it-beat-what-they-do-now

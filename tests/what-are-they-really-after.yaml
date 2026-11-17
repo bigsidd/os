@@ -14,7 +14,7 @@
     decision: build
     not: what-are-they-really-after
 - title: Show the error message in the log line
-  body: I can't tell why jobs fail when I read the log, so include the error message in the log line.
+  body: I can't tell why cli.py jobs fail when I read its log, so include the error message in the "job failed" log line.
   expect:
     decision: build
     not: what-are-they-really-after
