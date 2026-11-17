@@ -1,18 +1,18 @@
 {
   "model": "sonnet",
-  "midwatch_commit": "165219c3fdcb0f504eb2223ff042d885e3ade454",
+  "midwatch_commit": "f6a857f3386acb266cf972529bab914dc72b16d7",
   "midwatch_dirty": false,
-  "planner_prompt_sha256": "b964f0055ff22765",
+  "planner_prompt_sha256": "b7489a050ef7a868",
   "schema": 1,
   "date": "2026-11-17",
-  "os_commit": "1ae113d823b0417dc293e5869b6a7662f63e9000",
+  "os_commit": "45765846bf0c964df8c3e6bf9c80c43ad1824611",
   "samples": 3,
   "cases": 56,
   "calls": 168,
-  "passed": 111,
+  "passed": 118,
   "total": 168,
-  "rate": 0.6607,
-  "cases_passed": 31,
+  "rate": 0.7024,
+  "cases_passed": 32,
   "bar": {
     "overall": 0.9,
     "per_rule": 0.75,
@@ -26,11 +26,13 @@
     "make-the-first-step-easy",
     "only-ask-what-changes-the-decision",
     "play-it-forward",
-    "rough-not-hollow",
-    "say-what-should-change",
-    "what-are-they-really-after"
+    "say-what-should-change"
   ],
-  "regressions": [],
+  "regressions": [
+    "code-before-a-model: Use AI to validate the signup form",
+    "most-ideas-dont-work: Fix the broken pricing page",
+    "play-it-forward: Hide the cancel button"
+  ],
   "per_rule": {
     "cheapest-answer-first": {
       "passed": 8,
@@ -41,27 +43,27 @@
       "total": 12
     },
     "does-it-beat-what-they-do-now": {
-      "passed": 6,
+      "passed": 7,
       "total": 12
     },
     "know-who-youre-not-serving": {
-      "passed": 8,
+      "passed": 7,
       "total": 12
     },
     "make-the-first-step-easy": {
-      "passed": 5,
+      "passed": 7,
       "total": 12
     },
     "most-ideas-dont-work": {
-      "passed": 12,
+      "passed": 11,
       "total": 12
     },
     "only-ask-what-changes-the-decision": {
-      "passed": 5,
+      "passed": 7,
       "total": 12
     },
     "play-it-forward": {
-      "passed": 6,
+      "passed": 5,
       "total": 12
     },
     "rank-what-matters": {
@@ -69,7 +71,7 @@
       "total": 12
     },
     "rough-not-hollow": {
-      "passed": 8,
+      "passed": 9,
       "total": 12
     },
     "say-what-should-change": {
@@ -81,7 +83,7 @@
       "total": 12
     },
     "what-are-they-really-after": {
-      "passed": 5,
+      "passed": 9,
       "total": 12
     },
     "who-is-it-for": {
@@ -99,6 +101,7 @@
       },
       "samples_failed": 3,
       "reasons": [
+        "cited does-it-beat-what-they-do-now, expected cheapest-answer-first",
         "cited most-ideas-dont-work, expected cheapest-answer-first"
       ]
     },
@@ -116,15 +119,29 @@
     },
     {
       "rule": "code-before-a-model",
+      "title": "Use AI to validate the signup form",
+      "expect": {
+        "decision": [
+          "build",
+          "refuse"
+        ],
+        "cites": "code-before-a-model"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "invalid plan: plan has unexpected keys"
+      ]
+    },
+    {
+      "rule": "code-before-a-model",
       "title": "Summarize long issue threads",
       "expect": {
         "decision": "build",
         "not": "code-before-a-model"
       },
-      "samples_failed": 3,
+      "samples_failed": 2,
       "reasons": [
-        "decided ask, expected build",
-        "used code-before-a-model, which should stay quiet here"
+        "decided ask, expected build"
       ]
     },
     {
@@ -134,7 +151,7 @@
         "decision": "refuse",
         "cites": "does-it-beat-what-they-do-now"
       },
-      "samples_failed": 3,
+      "samples_failed": 2,
       "reasons": [
         "cited most-ideas-dont-work, expected does-it-beat-what-they-do-now"
       ]
@@ -158,9 +175,9 @@
         "decision": "refuse",
         "cites": "know-who-youre-not-serving"
       },
-      "samples_failed": 1,
+      "samples_failed": 2,
       "reasons": [
-        "invalid plan: rule.changed must be a non-empty string of at most 200 chars"
+        "cited does-it-beat-what-they-do-now, expected know-who-youre-not-serving"
       ]
     },
     {
@@ -172,7 +189,9 @@
       },
       "samples_failed": 3,
       "reasons": [
-        "decided refuse, expected ask"
+        "decided refuse, expected ask",
+        "invalid plan: rule.changed must be a non-empty string of at most 200 chars",
+        "invalid plan: weighed.note must be a non-empty string of at most 200 chars"
       ]
     },
     {
@@ -184,7 +203,7 @@
       },
       "samples_failed": 3,
       "reasons": [
-        "decided refuse, expected ask"
+        "cited who-is-it-for, expected make-the-first-step-easy"
       ]
     },
     {
@@ -194,21 +213,21 @@
         "decision": "build",
         "cites": "make-the-first-step-easy"
       },
-      "samples_failed": 1,
+      "samples_failed": 2,
       "reasons": [
         "cited nothing, expected make-the-first-step-easy"
       ]
     },
     {
-      "rule": "make-the-first-step-easy",
-      "title": "Move argument parsing out of cli.py",
+      "rule": "most-ideas-dont-work",
+      "title": "Fix the broken pricing page",
       "expect": {
         "decision": "build",
-        "not": "make-the-first-step-easy"
+        "not": "most-ideas-dont-work"
       },
-      "samples_failed": 3,
+      "samples_failed": 1,
       "reasons": [
-        "decided refuse, expected build"
+        "decided ask, expected build"
       ]
     },
     {
@@ -236,18 +255,6 @@
       ]
     },
     {
-      "rule": "only-ask-what-changes-the-decision",
-      "title": "Improve things",
-      "expect": {
-        "decision": "ask",
-        "not": "only-ask-what-changes-the-decision"
-      },
-      "samples_failed": 2,
-      "reasons": [
-        "invalid plan: rule who-is-it-for decides ask, not refuse"
-      ]
-    },
-    {
       "rule": "play-it-forward",
       "title": "Auto-close stale issues",
       "expect": {
@@ -256,8 +263,21 @@
       },
       "samples_failed": 3,
       "reasons": [
-        "decided refuse, expected ask",
-        "invalid plan: weighed.note must be a non-empty string of at most 200 chars"
+        "decided build, expected ask",
+        "invalid plan: refusal_reason must be a non-empty string of at most 300 chars",
+        "weighed nothing, expected play-it-forward"
+      ]
+    },
+    {
+      "rule": "play-it-forward",
+      "title": "Hide the cancel button",
+      "expect": {
+        "decision": "refuse",
+        "weighs": "play-it-forward"
+      },
+      "samples_failed": 1,
+      "reasons": [
+        "weighed nothing, expected play-it-forward"
       ]
     },
     {
@@ -269,7 +289,7 @@
       },
       "samples_failed": 3,
       "reasons": [
-        "decided refuse, expected build"
+        "invalid plan: path traverses or is malformed: app/"
       ]
     },
     {
@@ -303,10 +323,9 @@
         "decision": "build",
         "cites": "rough-not-hollow"
       },
-      "samples_failed": 3,
+      "samples_failed": 2,
       "reasons": [
-        "cited what-are-they-really-after, expected rough-not-hollow",
-        "decided refuse, expected build"
+        "cited what-are-they-really-after, expected rough-not-hollow"
       ]
     },
     {
@@ -330,8 +349,7 @@
       },
       "samples_failed": 3,
       "reasons": [
-        "decided refuse, expected ask",
-        "invalid plan: rule who-is-it-for decides ask, not refuse"
+        "cited who-is-it-for, expected say-what-should-change"
       ]
     },
     {
@@ -355,7 +373,7 @@
       },
       "samples_failed": 1,
       "reasons": [
-        "decided refuse, expected build"
+        "invalid plan: rule.changed must be a non-empty string of at most 200 chars"
       ]
     },
     {
@@ -368,30 +386,6 @@
       "samples_failed": 3,
       "reasons": [
         "decided refuse, expected build"
-      ]
-    },
-    {
-      "rule": "what-are-they-really-after",
-      "title": "Add a dark-mode toggle",
-      "expect": {
-        "decision": "ask",
-        "cites": "what-are-they-really-after"
-      },
-      "samples_failed": 3,
-      "reasons": [
-        "decided refuse, expected ask"
-      ]
-    },
-    {
-      "rule": "what-are-they-really-after",
-      "title": "Crash when the config file is empty",
-      "expect": {
-        "decision": "build",
-        "not": "what-are-they-really-after"
-      },
-      "samples_failed": 1,
-      "reasons": [
-        "invalid plan: model output is not a JSON object"
       ]
     }
   ],
