@@ -29,6 +29,8 @@ I build products and the partnerships that make them pay. Eighteen years across 
 
 Each page has the rule, when it applies and when it doesn't, why I hold it and an example. Every rule has test cases in [`tests/`](tests/): four per rule, 56 in all. Rules 13 and 14 only weigh the others, so their cases check the weighing rather than a citation. [Midwatch](https://github.com/bigsidd/midwatch) runs every case against an agent with `--eval-os` and writes the results to `tests/results.json`.
 
+Last run, 2026-11-17: 111 of 168 samples passed (66%), three per case, and 31 of 56 cases passed every time. The bar is 90% overall and 75% per rule, and it isn't met yet. Who-is-it-for, most-ideas-dont-work and show-where-it-breaks passed every sample. Nine rules are under 75%. Most misses are the planner citing a neighbouring rule, or asking where the case expects a call: that's where the rules still blur.
+
 ## Credit
 
 The wording and examples are mine. Each page's credit names published work I drew on; it isn't a complete list of where the ideas came from.
