@@ -29,7 +29,7 @@ I build products and the partnerships that make them pay. Eighteen years across 
 
 Each page has the rule, when it applies and when it doesn't, why I hold it and an example. Every rule has test cases in [`tests/`](tests/): four per rule, 56 in all. Rules 13 and 14 only weigh the others, so their cases check the weighing rather than a citation. [Midwatch](https://github.com/bigsidd/midwatch) runs every case against an agent with `--eval-os` and writes the results to `tests/results.json`.
 
-Last run, 2026-11-17: 111 of 168 samples passed (66%), three per case, and 31 of 56 cases passed every time. The bar is 90% overall and 75% per rule, and it isn't met yet. Who-is-it-for, most-ideas-dont-work and show-where-it-breaks passed every sample. Nine rules are under 75%. The biggest group of misses is the planner refusing work the case expects it to build or ask about, including plain changes like a version bump. Citing a neighbouring rule is the next biggest, and that's where the rules still blur.
+Last run, 2026-11-17, a re-run after Midwatch's planner got back the line "Refusing is rare": 118 of 168 samples passed (70%, up from 66% on the first run), three per case, and 32 of 56 cases passed every time. The bar is 90% overall, 75% per rule and no regressions, and it still isn't met. Who-is-it-for and show-where-it-breaks passed every sample. Seven rules are under 75%. Three cases that passed every time before now fail at least once: Use AI to validate the signup form, Fix the broken pricing page and Hide the cancel button. Refusals dropped to 7 of the 50 failed samples. Citing a neighbouring rule is now the biggest group of misses, 22 samples, and that's where the rules still blur. Invalid output is next, 8 samples.
 
 ## Credit
 
